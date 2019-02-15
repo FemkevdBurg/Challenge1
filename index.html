@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Challenge 1</title>
     <link type="text/css" href="styles/style.css" rel="stylesheet" />
-    <script type="text/javascript" src="scripts/main.js"></script>
   </head>
   <body>
 
@@ -26,85 +25,52 @@
 <div class="flex-itemSnelheid">
     <h2>Snelheid</h2>
     <div id="chartdiv"></div>
-
-    <!-- Resources -->
-    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
-
-    <!-- Chart code -->
-    <script>
-    // Themes begin
-    am4core.useTheme(am4themes_animated);
-    // Themes end
-
-    // create chart
-    var chart = am4core.create("chartdiv", am4charts.GaugeChart);
-    chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
-
-    chart.innerRadius = -25;
-
-    var axis = chart.xAxes.push(new am4charts.ValueAxis());
-    axis.min = 0;
-    axis.max = 100;
-    axis.strictMinMax = true;
-    axis.renderer.grid.template.stroke = new am4core.InterfaceColorSet().getFor("background");
-    axis.renderer.grid.template.strokeOpacity = 0.3;
-
-    var colorSet = new am4core.ColorSet();
-
-    var range0 = axis.axisRanges.create();
-    range0.value = 0;
-    range0.endValue = 50;
-    range0.axisFill.fillOpacity = 1;
-    range0.axisFill.fill = colorSet.getIndex(0);
-    range0.axisFill.zIndex = - 1;
-
-    var range1 = axis.axisRanges.create();
-    range1.value = 50;
-    range1.endValue = 80;
-    range1.axisFill.fillOpacity = 1;
-    range1.axisFill.fill = colorSet.getIndex(2);
-    range1.axisFill.zIndex = -1;
-
-    var range2 = axis.axisRanges.create();
-    range2.value = 80;
-    range2.endValue = 100;
-    range2.axisFill.fillOpacity = 1;
-    range2.axisFill.fill = colorSet.getIndex(4);
-    range2.axisFill.zIndex = -1;
-
-    var hand = chart.hands.push(new am4charts.ClockHand());
-
-    // using chart.setTimeout method as the timeout will be disposed together with a chart
-    chart.setTimeout(randomValue, 2000);
-
-    function randomValue() {
-        hand.showValue(Math.random() * 100, 1000, am4core.ease.cubicOut);
-        chart.setTimeout(randomValue, 2000);
-    }
-    </script>
 </div>
 
 <div class="grid-container flex-itemAfstand box2">
-  <h3>Afstand</h3>
+  <h3>Tijd tot bestemming</h3>
+
+  <div class="containerTime">
+    <ul class="flex-containerTime">
+      <li><span id="days"></span>dagen</li>
+      <li id="liHours"><span id="hours"></span>uren</li>
+      <li><span id="minutes"></span>minuten</li>
+      <li><span id="seconds"></span>seconden</li>
+    </ul>
+  </div>
+
 </div>
 
-
-<div class="grid-container flex-itemVoorraden Voorraden box3">
+<div class="grid-container flex-itemVoorraden box3">
 
   <h4>Voorraden</h4>
 
-  <div class="pieContainer">
-    <div class="pieBackground"></div>
-    <div id="pieSlice1" class="hold"><div class="pie"></div><p>Water</p></div>
-    <div id="pieSlice2" class="hold"><div class="pie"></div></div>
+  <div id="voorraden">
+    <div id="part1" class="circle animate"></div>
+    <div id="part2" class="circle animate"></div>
   </div>
+
+  <div class="legenda flex-containerLegenda">
+    <div><div class="cirkel1"></div><p id="water">Water</p></div>
+    <div><div class="cirkel2"></div><p id="eten">Eten</p></div>
+  </div>
+
+</div>
+
+<div class="grid-container flex-itemVoorraden box4">
+
+  <p>Met de krachtigste raket ooit, genaamnd <span>Interplanetary Transport System<span>, naar Mars reizen. Een ruimteschip die ontworpen is om per vlucht minimaal 100 mensen naar de Rode Planeet te vervoeren. Bekijk hier de benodigde data voor deze reis!</p>
 
 </div>
 
 
 </section>
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/4/core.js"></script>
+<script src="https://www.amcharts.com/lib/4/charts.js"></script>
+<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
-  </body>
-  </html>
+<!-- Chart code -->
+<script src="scripts/main.js"></script>
+</body>
+</html>

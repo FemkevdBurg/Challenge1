@@ -60,7 +60,7 @@ h1{
 h2{
   margin-top: 0px;
   margin-bottom: -100px;
-  width: 360px;
+  width: 100%
   color: white;
   font-size: 30px;
   font-weight: lighter;
@@ -77,7 +77,7 @@ h2{
 h3{
   margin-top: -30px;
   margin-bottom: -100px;
-  width: 360px;
+  width: 100%;
   color: white;
   font-size: 30px;
   font-weight: lighter;
@@ -128,7 +128,7 @@ li span {
 h4{
   margin-top: 200px;
   margin-bottom: -100px;
-  width: 360px;
+  width: 100%;
   color: white;
   font-size: 30px;
   font-weight: lighter;
@@ -474,7 +474,7 @@ h4{
 
   .legenda{
     margin-top: 150px;
-    margin-right: 80px; 
+    margin-right: 80px;
   }
 
   .box4{

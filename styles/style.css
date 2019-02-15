@@ -60,7 +60,8 @@ h1{
 h2{
   margin-top: 0px;
   margin-bottom: -100px;
-  width: 100%
+  min-width: 100px;
+  width: 100%;
   color: white;
   font-size: 30px;
   font-weight: lighter;
@@ -77,6 +78,7 @@ h2{
 h3{
   margin-top: -30px;
   margin-bottom: -100px;
+  min-width: 100px;
   width: 100%;
   color: white;
   font-size: 30px;
@@ -128,6 +130,7 @@ li span {
 h4{
   margin-top: 200px;
   margin-bottom: -100px;
+  min-width: 100px;
   width: 100%;
   color: white;
   font-size: 30px;
